@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Chetna ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Parisienne&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="floating-hearts-bg" id="heartsContainer"></div>
+
+    <section class="slide active-slide slide-1" id="slide1">
+        <div class="bg-overlay" style="background-image: url('assets/bg-eyes.jpg'); opacity: 0.3;"></div>
+        
+        <div class="content-container fade-in-up">
+            <h1 class="main-title">Happy Rose Day, My Baby Chetna</h1>
+            
+            <div class="hero-image-container">
+                <img src="assets/cartoon-rose.png" alt="Sending Love" class="floating-animate main-hero-img">
+                <div class="heart-trail"></div>
+            </div>
+
+            <p class="romantic-text">
+                A rose for the person who makes my world more beautiful just by being in it. You are my everything, Roushan's heartbeat. 🌹
+            </p>
+
+            <button class="btn-main hidden-initially" id="toSlide2Btn">Open Memories 💖</button>
+        </div>
+    </section>
+
+
+    <section class="slide slide-2" id="slide2">
+        <div class="bg-overlay" style="background-image: url('assets/bg-face.jpg'); opacity: 0.25;"></div>
+        
+        <div class="content-container">
+            <h2 class="script-title">Our Cute Love Moments</h2>
+            
+            <div class="photo-grid">
+                <div class="grid-item tilt-left"><img src="assets/memory-1.jpg" alt="Memory"></div>
+                <div class="grid-item tilt-right"><img src="assets/memory-2.jpg" alt="Memory"></div>
+                <div class="grid-item tilt-left"><img src="assets/memory-3.jpg" alt="Memory"></div>
+                <div class="grid-item tilt-right"><img src="assets/memory-4.jpg" alt="Memory"></div>
+                <div class="grid-item tilt-left"><img src="assets/memory-5.jpg" alt="Memory"></div>
+                <div class="grid-item tilt-right"><img src="assets/memory-6.jpg" alt="Memory"></div>
+            </div>
+
+            <button class="btn-main pulse-btn" id="toSlide3Btn">GIFT FOR NUNU ON ROSE DAY 🎁</button>
+        </div>
+    </section>
+
+
+    <section class="slide slide-3" id="slide3">
+        <div class="bg-overlay" style="background-image: url('assets/bg-couple-main.jpg'); opacity: 0.2;"></div>
+
+        <div class="content-container">
+            <h2 class="script-title">Pick a Rose, My Devi Ji...</h2>
+            <p class="sub-text">Each color holds a secret message of my deep love for you.</p>
+
+            <div class="roses-container">
+                <div class="rose-item" onclick="openRoseMessage('red')">
+                    <span class="rose-icon red-rose">🌹</span>
+                    <p>Deep Love</p>
+                </div>
+                <div class="rose-item" onclick="openRoseMessage('pink')">
+                    <span class="rose-icon pink-rose">🌸</span>
+                    <p>My Devi Ji</p>
+                </div>
+                <div class="rose-item" onclick="openRoseMessage('white')">
+                    <span class="rose-icon white-rose">💮</span>
+                    <p>Pure Intentions</p>
+                </div>
+                <div class="rose-item" onclick="openRoseMessage('yellow')">
+                    <span class="rose-icon yellow-rose">🌻</span>
+                    <p>Peace & Joy</p>
+                </div>
+                <div class="rose-item" onclick="openRoseMessage('blue')">
+                    <span class="rose-icon blue-rose">🥀</span>
+                    <p>Divine Meeting</p>
+                </div>
+            </div>
+
+            <button class="btn-main hidden hidden-initially pulse-btn" id="toFinalSlideBtn">GIFT FOR BETU 💖🌹</button>
+        </div>
+
+        <div class="message-modal hidden" id="roseModal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <img src="" alt="Us" id="modalImage" class="modal-img">
+                <p id="modalText" class="romantic-text"></p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="slide slide-4" id="slide4">
+        <div class="bg-overlay" style="background-image: url('assets/bg-couple-main.jpg'); opacity: 0.1;"></div>
+
+        <div class="content-container finale-container centered-absolute">
+            
+            <div class="heart-name-wrapper" id="nameHeartBtn">
+                <div class="pulsing-heart-shape"></div>
+                <div class="names-text">
+                    <span class="name-chetna">CHETNA</span>
+                    <span class="and-symbol">&</span>
+                    <span class="name-roushan">ROUSHAN</span>
+                </div>
+                <p class="click-hint">(Tap our hearts...)</p>
+            </div>
+
+            <div class="bouquet-reveal hidden" id="bouquetReveal">
+                <img src="assets/realistic-bouquet.png" alt="Beautiful Bouquet" class="final-bouquet" id="finalBouquetImage">
+                <div class="final-message-box fade-in-up" id="finalMessage">
+                    <h2 class="script-title">My Dearest Wife, My Devi Ji 🙏</h2>
+                    <p class="romantic-text">
+                        You are not just my wife; you are the blessing Bholebaba granted me. My world changed the moment you entered it. On this Rose Day, and every day, I surrender my heart to you. I love you infinitely, Chetna.
+                        <br><br>
+                        Yours forever, <br> Roushan.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
