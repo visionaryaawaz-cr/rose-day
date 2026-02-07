@@ -1,0 +1,350 @@
+/* --- Reset & Core Themes --- */
+:root {
+    --primary-pink: #ff6b95;
+    --soft-pink: #ffe4e9;
+    --deep-red: #d92546;
+    --text-dark: #4a4a4a;
+    --gold-accent: #ffd700;
+    --bg-gradient: linear-gradient(135deg, #ffe4e9 0%, #fff0f3 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    color: var(--text-dark);
+}
+
+/* --- Typography --- */
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: var(--deep-red);
+    text-shadow: 2px 2px 4px rgba(255, 107, 149, 0.3);
+    margin-bottom: 20px;
+}
+
+.script-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--deep-red);
+    margin-bottom: 15px;
+}
+
+.romantic-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    font-weight: 400;
+    padding: 10px;
+}
+
+/* --- Layout & Slides --- */
+.slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active-slide {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+/* Content Container (The white card look) */
+.content-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    backdrop-filter: blur(5px);
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+/* Background Overlays for photos */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+    filter: grayscale(30%) sepia(20%); /* Dreaming look */
+}
+
+
+/* --- Components & Specific Slides --- */
+
+/* Buttons */
+.btn-main {
+    background: linear-gradient(45deg, var(--deep-red), var(--primary-pink));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(217, 37, 70, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.btn-main:hover {
+    transform: scale(1.05);
+}
+
+/* Slide 1: Hero Image */
+.hero-image-container {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-hero-img {
+    max-height: 180px;
+    z-index: 2;
+}
+
+/* Slide 2: Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(3deg); }
+
+
+/* Slide 3: The 5 Roses */
+.roses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.rose-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rose-item:hover { transform: translateY(-10px); }
+
+.rose-icon {
+    font-size: 3rem;
+    display: block;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+}
+/* Styling different roses */
+.red-rose { color: red; }
+.pink-rose { color: #ff69b4; }
+.white-rose { color: #f8f8f8; text-shadow: 0 0 2px #ccc; }
+.yellow-rose { color: gold; }
+.blue-rose { color: royalblue; filter: hue-rotate(45deg); }
+
+/* Slide 3: Modal */
+.message-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    border: 4px solid var(--primary-pink);
+}
+.close-modal {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--deep-red);
+}
+.modal-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* --- Slide 4: Grand Finale --- */
+.centered-absolute {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    /* Removing white bg for this slide for cooler effect */
+    background: transparent; 
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.heart-name-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* The pulsing background heart */
+.pulsing-heart-shape {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, var(--primary-pink) 0%, transparent 70%);
+    opacity: 0.5;
+    animation: giantPulse 2s infinite;
+}
+.names-text {
+    font-family: 'Parisienne', cursive;
+    color: var(--deep-red);
+    text-shadow: 1px 1px 2px white;
+    z-index: 5;
+    text-align: center;
+}
+.name-chetna, .name-roushan {
+    display: block;
+    font-size: 3.5rem;
+    line-height: 1;
+}
+.and-symbol { font-size: 2rem; display: block; margin: 5px 0; color: var(--primary-pink);}
+
+.click-hint {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    animation: fadePulsate 1.5s infinite;
+}
+
+/* Bouquet Reveal Styles */
+.bouquet-reveal {
+    text-align: center;
+    margin-top: -200px; /* Overlap the heart area initially */
+}
+
+.final-bouquet {
+    width: 100%;
+    max-width: 350px;
+    /* Initial state for GSAP animation */
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+}
+
+.final-message-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 3px solid var(--gold-accent);
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+/* --- Animations --- */
+
+/* Simple CSS Animations */
+.hidden { display: none !important; }
+.hidden-initially { opacity: 0; pointer-events: none; transition: opacity 1s ease;}
+.hidden-initially.show { opacity: 1; pointer-events: auto; }
+
+.floating-animate { animation: floating 3s ease-in-out infinite; }
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, -0px); }
+}
+
+.pulse-btn { animation: pulse 2s infinite; }
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(217, 37, 70, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(217, 37, 70, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(217, 37, 70, 0); }
+}
+
+@keyframes giantPulse {
+    0% { transform: scale(0.8); opacity: 0.3;}
+    50% { transform: scale(1.1); opacity: 0.6;}
+    100% { transform: scale(0.8); opacity: 0.3;}
+}
+
+@keyframes fadePulsate {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* Background Floating Hearts (Generated by JS) */
+.floating-hearts-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.bg-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    color: rgba(255, 105, 180, 0.4);
+    animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
